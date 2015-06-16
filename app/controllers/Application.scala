@@ -17,7 +17,7 @@ object Application extends Controller {
       for {
         response <- call1
       } yield {
-        Ok(response.body)
+        Ok(views.html.index(response.body))
       }
   }
 
