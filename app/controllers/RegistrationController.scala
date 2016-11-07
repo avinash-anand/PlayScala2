@@ -9,22 +9,22 @@ object RegistrationController extends Controller {
   private val basePath = "conf/resources/"
 
   def registration(id: Int) = Action.async { implicit request =>
-    Logger.info(s"Inside GET Request - ID - $id")
+    Logger.info(s"Inside GET Request - ID - $id ; request-headers - ${request.headers}")
     FileUtils.getFile(basePath + "registration" + id + ".json")
   }
 
   def submit = Action.async { implicit request =>
-    Logger.info("Inside POST request")
+    Logger.info(s"Inside POST request ; request-headers - ${request.headers}")
     FileUtils.getFile(basePath + "registration123456789.json")
   }
 
   def put = Action.async { implicit request =>
-    Logger.info("Inside PUT request")
+    Logger.info(s"Inside PUT request ; request-headers - ${request.headers}")
     FileUtils.getFile(basePath + "registration_put.json")
   }
 
   def delete(id: Int) = Action.async { implicit request =>
-    Logger.info(s"Inside DELETE request - ID - $id")
+    Logger.info(s"Inside DELETE request - ID - $id ; request-headers - ${request.headers} ## ${request.body}")
     FileUtils.getFile(basePath + "registration" + id + ".json")
   }
 
