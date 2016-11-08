@@ -4,5 +4,9 @@
   "registrationDate": "2016-10-24",
   "processingDate": "2016-10-25T09:30:47Z",
   "isActive": false,
-  "cost": 100.75
+  "cost": 100.75,
+  "parent": {
+    "node1": "value1",
+    "booleanNode": true
+  }
 }
