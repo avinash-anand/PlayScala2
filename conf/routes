@@ -17,3 +17,8 @@ PUT         /registration                  controllers.RegistrationController.pu
 
 DELETE      /registration/:id              controllers.RegistrationController.delete(id: Int)
 
+# Trying to develop some xml based APIs
+
+GET         /xml-api/registration/:id       controllers.xmlApi.RegistrationController.registration(id: Int)
+
+

@@ -11,7 +11,7 @@ import scala.concurrent.Future
 
 object FileUtils extends Results with ContentTypes {
 
-  def getFile(filePath: String) = {
+  def getFile(filePath: String): Future[Result] = {
     Logger.info("[FileUtils][getFile] filePath - " + filePath)
     try {
       val file: File = Play.application.getFile(filePath)
@@ -24,6 +24,19 @@ object FileUtils extends Results with ContentTypes {
       )
     } catch {
       case e: Exception => Future.successful(NotFound("{\"statusCode\": 404, \"message\": \"Not Found\"}").as(MimeTypes.JSON))
+    }
+  }
+
+  def getXmlFile(filePath: String): Future[Result] = {
+    Logger.info("[FileUtils][getXmlFile] filePath - " + filePath)
+    try {
+      val file: File = Play.application.getFile(filePath)
+      val source = scala.io.Source.fromFile(file)
+      val fileData = source.mkString
+      source.close()
+      Future.successful(Ok(fileData).as(MimeTypes.XML))
+    } catch {
+      case ex: Exception => ???
     }
   }
 

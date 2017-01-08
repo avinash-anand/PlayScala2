@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<registration>
+    <registrationId>123456789</registrationId>
+    <status>Approved</status>
+    <registrationDate>2016-10-24</registrationDate>
+    <processingDate>2016-10-25T09:30:47Z</processingDate>
+    <isActive>true</isActive>
+    <cost>100.75</cost>
+</registration>

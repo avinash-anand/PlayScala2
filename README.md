@@ -5,6 +5,8 @@ pre-requisite:- need sbt installed on machine and an internet connection - to do
 command:- ```sbt run``` 
   - default port is 9000 for play applications
 
+## all apis are for testing purposes only
+
 Request - GET - http://localhost:9000/registration/123456789
 
 Response
@@ -59,5 +61,21 @@ Response
   "isActive": true,
   "cost": 100.75
 }
+```
+
+### Below are XML APIs
+
+Request - GET - http://localhost:9000/xml-api/registration/123456789
+
+Response
+```
+<registration>
+  <registrationId>123456789</registrationId>
+  <status>Approved</status>
+  <registrationDate>2016-10-24</registrationDate>
+  <processingDate>2016-10-25T09:30:47Z</processingDate>
+  <isActive>true</isActive>
+  <cost>100.75</cost>
+</registration>
 ```
 
